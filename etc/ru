@@ -1,0 +1,11 @@
+<?php
+  include('onetime-api.php');
+  $myOnetime = new OneTimeSecret;
+  $myOnetime->setCustomerID('YOUR_EMAIL');
+  $myOnetime->setToken('YOUR_OTS_APIKEY');
+  $myOnetime->setRecipient('delano@onetimesecret.com');
+  $myOnetime->setTTL(7200);
+  $myResult = $myOnetime->shareSecret('Jazz, jazz and more jazz.', 'thepassword');
+  print $myOnetime->getSecretURI($myResult);
+?>
+      
